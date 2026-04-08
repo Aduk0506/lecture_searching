@@ -29,14 +29,42 @@ def read_data(file_name, field):
             return None
         else:
             return data[field]
+def linear_search(sequence, number):
+    positions = []
+    for index, i in enumerate(sequence):
 
+        if i == number:
+            positions.append(index)
+    y = sequence.count(number)
+    dict = {
+
+        "pozice": positions,
+        "pocet": y
+    }
+    return dict
+
+
+def binary_search(sequence, number):
+    pozice = []
+    if number in sequence:
+        for index, i in enumerate(sequence):
+            if number > sequence[len(sequence)/2]:
+
+            elif number < sequence[len(sequence)/2]:
+
+
+            else:
+                return sequence[len(sequence)/2]
+
+    else:
+        return None
 def main():
     vystup = read_data("sequential.json", "unordered_numbers")
+    vyhledani = linear_search(vystup, 9)
+    return vystup,vyhledani
 
-    return vystup
 
-sequential_data = main()
-print(sequential_data)
+
 
 if __name__ == "__main__":
-    main()
+    print(main())
